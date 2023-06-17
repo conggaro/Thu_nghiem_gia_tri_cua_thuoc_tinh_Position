@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test thử cha relative, còn con thì absolute</title>
+
+    <style>
+        body{
+            margin: 0px;
+            padding: 0px;
+        }
+
+        .cha{
+            width: 800px;
+            height: 400px;
+            border: solid red 1px;
+
+            /* đã cài đặt static thì top hay left đều không di chuyển */
+            /* top 100px cũng đứng im thôi */
+            position: relative;
+            top: 100px;
+            left: 100px;
+        }
+
+        div[id="con"]{
+            width: 100px;
+            height: 100px;
+        }
+
+        /* con 1 */
+        .con1{
+            background: blue;
+            position: absolute;
+            top: 30px;
+            left: 30px;
+        }
+
+        .con2{
+            background: green;
+            position: static;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="cha">
+        <!-- thêm cái id để cài đặt thuộc tính chung cho nhanh ấy mà -->
+        <div class="con1" id="con">Con 1</div>
+        <div class="con2" id="con">Con 2</div>
+    </div>
+
+    <p>Nhận xét: Cha relative, con absolute thì phần tử con nó thay đổi vị trí
+        theo phần tử cha. Lúc này nó lại ăn theo phần tử cha mà không ăn theo
+        thiết bị 👍👍👍
+    </p>
+</body>
+</html>
